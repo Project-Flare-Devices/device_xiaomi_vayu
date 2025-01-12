@@ -10,3 +10,6 @@ git clone --depth=1 https://github.com/bagaskara815/kernel_xiaomi_vayu.git -b 14
 rm -rf hardware/xiaomi
 git clone https://github.com/LineageOS/android_hardware_xiaomi.git hardware/xiaomi -b lineage-22.0
 rm -rf hardware/xiaomi/megvii
+
+# Rename conflicting qti_kernel_headers in source
+sed -i 's/"qti_kernel_headers"/"qti_kernel_headers_old"/g' vendor/flare/build/soong/Android.bp
